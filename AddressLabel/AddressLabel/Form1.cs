@@ -15,6 +15,7 @@ namespace AddressLabel
             StreetTextbox.Text = "";
             StateTextbox.Text = "";
             CityTextbox.Text = "";
+            ZipTextbox.Text = "";
 
             SubmitButton.Enabled = false;
         }
