@@ -34,6 +34,11 @@ namespace AddressLabel
             SetDefaults();
         }
 
+        private void SubmitButton_Click(object sender, EventArgs e)
+        {
+            ValidateFields();
+        }
+
         private bool ValidateFields()
         {
             bool valid = false;
@@ -65,7 +70,7 @@ namespace AddressLabel
 
             if (NameTextbox.Text == "")
             {
-                message = "Name is required\n" + message;
+                message = "First name is required\n" + message;
                 NameTextbox.Focus();
             }
             if (message != "")
