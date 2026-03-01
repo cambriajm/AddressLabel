@@ -31,6 +31,18 @@
             ExitButton = new Button();
             SubmitButton = new Button();
             ClearButton = new Button();
+            NameTextbox = new TextBox();
+            LastNameTextbox = new TextBox();
+            CityTextbox = new TextBox();
+            StreetTextbox = new TextBox();
+            StateTextbox = new TextBox();
+            ZipTextbox = new TextBox();
+            FirstNameLabel = new Label();
+            LastNameLabel = new Label();
+            CityLabel = new Label();
+            StreetLabel = new Label();
+            ZipLabel = new Label();
+            StateLabel = new Label();
             SuspendLayout();
             // 
             // ExitButton
@@ -60,12 +72,127 @@
             ClearButton.TabIndex = 2;
             ClearButton.Text = "&Clear";
             ClearButton.UseVisualStyleBackColor = true;
+            ClearButton.Click += ClearButton_Click;
+            // 
+            // NameTextbox
+            // 
+            NameTextbox.Location = new Point(117, 42);
+            NameTextbox.Name = "NameTextbox";
+            NameTextbox.Size = new Size(251, 27);
+            NameTextbox.TabIndex = 3;
+            NameTextbox.TextChanged += Name_TextChanged;
+            // 
+            // LastNameTextbox
+            // 
+            LastNameTextbox.Location = new Point(117, 89);
+            LastNameTextbox.Name = "LastNameTextbox";
+            LastNameTextbox.Size = new Size(251, 27);
+            LastNameTextbox.TabIndex = 4;
+            // 
+            // CityTextbox
+            // 
+            CityTextbox.Location = new Point(117, 180);
+            CityTextbox.Name = "CityTextbox";
+            CityTextbox.Size = new Size(251, 27);
+            CityTextbox.TabIndex = 6;
+            // 
+            // StreetTextbox
+            // 
+            StreetTextbox.Location = new Point(117, 135);
+            StreetTextbox.Name = "StreetTextbox";
+            StreetTextbox.Size = new Size(251, 27);
+            StreetTextbox.TabIndex = 5;
+            // 
+            // StateTextbox
+            // 
+            StateTextbox.Location = new Point(117, 229);
+            StateTextbox.Name = "StateTextbox";
+            StateTextbox.Size = new Size(251, 27);
+            StateTextbox.TabIndex = 7;
+            // 
+            // ZipTextbox
+            // 
+            ZipTextbox.Location = new Point(117, 276);
+            ZipTextbox.Name = "ZipTextbox";
+            ZipTextbox.Size = new Size(251, 27);
+            ZipTextbox.TabIndex = 8;
+            // 
+            // FirstNameLabel
+            // 
+            FirstNameLabel.AutoSize = true;
+            FirstNameLabel.Location = new Point(12, 45);
+            FirstNameLabel.Name = "FirstNameLabel";
+            FirstNameLabel.Size = new Size(80, 20);
+            FirstNameLabel.TabIndex = 9;
+            FirstNameLabel.Text = "First Name";
+            FirstNameLabel.Click += label1_Click;
+            // 
+            // LastNameLabel
+            // 
+            LastNameLabel.AutoSize = true;
+            LastNameLabel.Location = new Point(12, 88);
+            LastNameLabel.Name = "LastNameLabel";
+            LastNameLabel.Size = new Size(79, 20);
+            LastNameLabel.TabIndex = 10;
+            LastNameLabel.Text = "Last Name";
+            LastNameLabel.Click += label2_Click;
+            // 
+            // CityLabel
+            // 
+            CityLabel.AutoSize = true;
+            CityLabel.Location = new Point(12, 179);
+            CityLabel.Name = "CityLabel";
+            CityLabel.Size = new Size(34, 20);
+            CityLabel.TabIndex = 12;
+            CityLabel.Text = "City";
+            CityLabel.Click += label3_Click;
+            // 
+            // StreetLabel
+            // 
+            StreetLabel.AutoSize = true;
+            StreetLabel.Location = new Point(12, 134);
+            StreetLabel.Name = "StreetLabel";
+            StreetLabel.Size = new Size(105, 20);
+            StreetLabel.TabIndex = 11;
+            StreetLabel.Text = "Street Address";
+            StreetLabel.Click += label4_Click;
+            // 
+            // ZipLabel
+            // 
+            ZipLabel.AutoSize = true;
+            ZipLabel.Location = new Point(12, 275);
+            ZipLabel.Name = "ZipLabel";
+            ZipLabel.Size = new Size(70, 20);
+            ZipLabel.TabIndex = 14;
+            ZipLabel.Text = "Zip Code";
+            // 
+            // StateLabel
+            // 
+            StateLabel.AutoSize = true;
+            StateLabel.Location = new Point(12, 228);
+            StateLabel.Name = "StateLabel";
+            StateLabel.Size = new Size(43, 20);
+            StateLabel.TabIndex = 13;
+            StateLabel.Text = "State";
+            StateLabel.Click += label6_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(ZipLabel);
+            Controls.Add(StateLabel);
+            Controls.Add(CityLabel);
+            Controls.Add(StreetLabel);
+            Controls.Add(LastNameLabel);
+            Controls.Add(FirstNameLabel);
+            Controls.Add(ZipTextbox);
+            Controls.Add(StateTextbox);
+            Controls.Add(CityTextbox);
+            Controls.Add(StreetTextbox);
+            Controls.Add(LastNameTextbox);
+            Controls.Add(NameTextbox);
             Controls.Add(ClearButton);
             Controls.Add(SubmitButton);
             Controls.Add(ExitButton);
@@ -73,6 +200,7 @@
             Text = "Form1";
             Load += Form1_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -80,5 +208,17 @@
         private Button ExitButton;
         private Button SubmitButton;
         private Button ClearButton;
+        private TextBox NameTextbox;
+        private TextBox LastNameTextbox;
+        private TextBox CityTextbox;
+        private TextBox StreetTextbox;
+        private TextBox StateTextbox;
+        private TextBox ZipTextbox;
+        private Label FirstNameLabel;
+        private Label LastNameLabel;
+        private Label CityLabel;
+        private Label StreetLabel;
+        private Label ZipLabel;
+        private Label StateLabel;
     }
 }
