@@ -17,7 +17,7 @@ namespace AddressLabel
             CityTextbox.Text = "";
             ZipTextbox.Text = "";
 
-            SubmitButton.Enabled = false;
+            SubmitButton.Enabled = true;
         }
 
 
@@ -35,10 +35,6 @@ namespace AddressLabel
             SetDefaults();
         }
 
-        private void SubmitButton_Click(object sender, EventArgs e)
-        {
-            ValidateFields();
-        }
 
         private bool ValidateFields()
         {
@@ -63,7 +59,7 @@ namespace AddressLabel
                 StreetTextbox.Focus();
             }
 
-            if(LastNameTextbox.Text == "")
+            if (LastNameTextbox.Text == "")
             {
                 message = "Last Name is required";
                 LastNameTextbox.Focus();
@@ -79,11 +75,26 @@ namespace AddressLabel
                 MessageBox.Show(message);
             }
             return true;
-        }
-        private void Form1_Load(object sender, EventArgs e)
-        {
 
         }
+        private void SubmitButton_Click(object sender, EventArgs e)
+        {
+
+
+            {
+                Label.Text = NameTextbox.Text + LastNameTextbox.Text +
+                    StreetTextbox.Text + CityTextbox.Text
+                    + StateTextbox.Text + ZipTextbox.Text;
+
+
+
+
+                SubmitButton.Enabled = true;
+            }
+
+        }
+
+
 
         private void Name_TextChanged(object sender, EventArgs e)
         {
@@ -110,12 +121,23 @@ namespace AddressLabel
 
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label3_Click(object sender, EventArgs e)
+
+        private void Label_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label_CursorChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label_CursorChanged_1(object sender, EventArgs e)
         {
 
         }

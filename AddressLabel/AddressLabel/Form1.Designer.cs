@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             ExitButton = new Button();
             SubmitButton = new Button();
             ClearButton = new Button();
@@ -43,6 +44,11 @@
             StreetLabel = new Label();
             ZipLabel = new Label();
             StateLabel = new Label();
+            Label = new Label();
+            TopMenuStrip = new ContextMenuStrip(components);
+            helpToolStripMenuItem = new ToolStripMenuItem();
+            broskiToolStripMenuItem = new ToolStripMenuItem();
+            TopMenuStrip.SuspendLayout();
             SuspendLayout();
             // 
             // ExitButton
@@ -85,7 +91,7 @@
             // 
             // LastNameTextbox
             // 
-            LastNameTextbox.Location = new Point(117, 89);
+            LastNameTextbox.Location = new Point(117, 81);
             LastNameTextbox.Name = "LastNameTextbox";
             LastNameTextbox.Size = new Size(251, 27);
             LastNameTextbox.TabIndex = 4;
@@ -177,11 +183,43 @@
             StateLabel.Text = "State";
             StateLabel.Click += label6_Click;
             // 
+            // Label
+            // 
+            Label.Cursor = Cursors.Hand;
+            Label.Font = new Font("Wingdings", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 2);
+            Label.Location = new Point(397, 32);
+            Label.Name = "Label";
+            Label.Size = new Size(391, 310);
+            Label.TabIndex = 15;
+            Label.Click += Label_Click;
+            // 
+            // TopMenuStrip
+            // 
+            TopMenuStrip.AllowDrop = true;
+            TopMenuStrip.ImageScalingSize = new Size(20, 20);
+            TopMenuStrip.Items.AddRange(new ToolStripItem[] { helpToolStripMenuItem, broskiToolStripMenuItem });
+            TopMenuStrip.Name = "contextMenuStrip1";
+            TopMenuStrip.Size = new Size(119, 52);
+            TopMenuStrip.Text = "Menu";
+            // 
+            // helpToolStripMenuItem
+            // 
+            helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            helpToolStripMenuItem.Size = new Size(118, 24);
+            helpToolStripMenuItem.Text = "&Help";
+            // 
+            // broskiToolStripMenuItem
+            // 
+            broskiToolStripMenuItem.Name = "broskiToolStripMenuItem";
+            broskiToolStripMenuItem.Size = new Size(118, 24);
+            broskiToolStripMenuItem.Text = "&Broski";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(Label);
             Controls.Add(ZipLabel);
             Controls.Add(StateLabel);
             Controls.Add(CityLabel);
@@ -197,12 +235,15 @@
             Controls.Add(ClearButton);
             Controls.Add(SubmitButton);
             Controls.Add(ExitButton);
+            Cursor = Cursors.No;
             Name = "Form1";
             Text = "Form1";
-            Load += Form1_Load;
+            TopMenuStrip.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
+
+
 
         #endregion
 
@@ -221,5 +262,9 @@
         private Label StreetLabel;
         private Label ZipLabel;
         private Label StateLabel;
+        private Label Label;
+        private ContextMenuStrip TopMenuStrip;
+        private ToolStripMenuItem helpToolStripMenuItem;
+        private ToolStripMenuItem broskiToolStripMenuItem;
     }
 }
