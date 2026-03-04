@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             ExitButton = new Button();
             SubmitButton = new Button();
             ClearButton = new Button();
@@ -45,10 +45,16 @@
             ZipLabel = new Label();
             StateLabel = new Label();
             Label = new Label();
-            TopMenuStrip = new ContextMenuStrip(components);
+            menuStrip1 = new MenuStrip();
+            menuToolStripMenuItem = new ToolStripMenuItem();
             helpToolStripMenuItem = new ToolStripMenuItem();
-            broskiToolStripMenuItem = new ToolStripMenuItem();
-            TopMenuStrip.SuspendLayout();
+            fileToolStripMenuItem = new ToolStripMenuItem();
+            groupBox1 = new GroupBox();
+            colorDialog1 = new ColorDialog();
+            pictureBox1 = new PictureBox();
+            menuStrip1.SuspendLayout();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // ExitButton
@@ -83,7 +89,7 @@
             // 
             // NameTextbox
             // 
-            NameTextbox.Location = new Point(117, 42);
+            NameTextbox.Location = new Point(114, 26);
             NameTextbox.Name = "NameTextbox";
             NameTextbox.Size = new Size(251, 27);
             NameTextbox.TabIndex = 3;
@@ -91,35 +97,35 @@
             // 
             // LastNameTextbox
             // 
-            LastNameTextbox.Location = new Point(117, 81);
+            LastNameTextbox.Location = new Point(114, 65);
             LastNameTextbox.Name = "LastNameTextbox";
             LastNameTextbox.Size = new Size(251, 27);
             LastNameTextbox.TabIndex = 4;
             // 
             // CityTextbox
             // 
-            CityTextbox.Location = new Point(117, 180);
+            CityTextbox.Location = new Point(114, 164);
             CityTextbox.Name = "CityTextbox";
             CityTextbox.Size = new Size(251, 27);
             CityTextbox.TabIndex = 6;
             // 
             // StreetTextbox
             // 
-            StreetTextbox.Location = new Point(117, 135);
+            StreetTextbox.Location = new Point(114, 119);
             StreetTextbox.Name = "StreetTextbox";
             StreetTextbox.Size = new Size(251, 27);
             StreetTextbox.TabIndex = 5;
             // 
             // StateTextbox
             // 
-            StateTextbox.Location = new Point(117, 229);
+            StateTextbox.Location = new Point(114, 213);
             StateTextbox.Name = "StateTextbox";
             StateTextbox.Size = new Size(251, 27);
             StateTextbox.TabIndex = 7;
             // 
             // ZipTextbox
             // 
-            ZipTextbox.Location = new Point(117, 276);
+            ZipTextbox.Location = new Point(114, 260);
             ZipTextbox.Name = "ZipTextbox";
             ZipTextbox.Size = new Size(251, 27);
             ZipTextbox.TabIndex = 8;
@@ -127,7 +133,7 @@
             // FirstNameLabel
             // 
             FirstNameLabel.AutoSize = true;
-            FirstNameLabel.Location = new Point(12, 45);
+            FirstNameLabel.Location = new Point(9, 29);
             FirstNameLabel.Name = "FirstNameLabel";
             FirstNameLabel.Size = new Size(80, 20);
             FirstNameLabel.TabIndex = 9;
@@ -137,7 +143,7 @@
             // LastNameLabel
             // 
             LastNameLabel.AutoSize = true;
-            LastNameLabel.Location = new Point(12, 88);
+            LastNameLabel.Location = new Point(9, 72);
             LastNameLabel.Name = "LastNameLabel";
             LastNameLabel.Size = new Size(79, 20);
             LastNameLabel.TabIndex = 10;
@@ -147,7 +153,7 @@
             // CityLabel
             // 
             CityLabel.AutoSize = true;
-            CityLabel.Location = new Point(12, 179);
+            CityLabel.Location = new Point(9, 163);
             CityLabel.Name = "CityLabel";
             CityLabel.Size = new Size(34, 20);
             CityLabel.TabIndex = 12;
@@ -157,7 +163,7 @@
             // StreetLabel
             // 
             StreetLabel.AutoSize = true;
-            StreetLabel.Location = new Point(12, 134);
+            StreetLabel.Location = new Point(9, 118);
             StreetLabel.Name = "StreetLabel";
             StreetLabel.Size = new Size(105, 20);
             StreetLabel.TabIndex = 11;
@@ -167,7 +173,7 @@
             // ZipLabel
             // 
             ZipLabel.AutoSize = true;
-            ZipLabel.Location = new Point(12, 275);
+            ZipLabel.Location = new Point(9, 259);
             ZipLabel.Name = "ZipLabel";
             ZipLabel.Size = new Size(70, 20);
             ZipLabel.TabIndex = 14;
@@ -176,7 +182,7 @@
             // StateLabel
             // 
             StateLabel.AutoSize = true;
-            StateLabel.Location = new Point(12, 228);
+            StateLabel.Location = new Point(9, 212);
             StateLabel.Name = "StateLabel";
             StateLabel.Size = new Size(43, 20);
             StateLabel.TabIndex = 13;
@@ -186,59 +192,94 @@
             // Label
             // 
             Label.Cursor = Cursors.Hand;
-            Label.Font = new Font("Wingdings", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 2);
+            Label.Font = new Font("Old English Text MT", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Label.Location = new Point(397, 32);
             Label.Name = "Label";
             Label.Size = new Size(391, 310);
             Label.TabIndex = 15;
             Label.Click += Label_Click;
             // 
-            // TopMenuStrip
+            // menuStrip1
             // 
-            TopMenuStrip.AllowDrop = true;
-            TopMenuStrip.ImageScalingSize = new Size(20, 20);
-            TopMenuStrip.Items.AddRange(new ToolStripItem[] { helpToolStripMenuItem, broskiToolStripMenuItem });
-            TopMenuStrip.Name = "contextMenuStrip1";
-            TopMenuStrip.Size = new Size(119, 52);
-            TopMenuStrip.Text = "Menu";
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { menuToolStripMenuItem, helpToolStripMenuItem, fileToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(801, 28);
+            menuStrip1.TabIndex = 16;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // menuToolStripMenuItem
+            // 
+            menuToolStripMenuItem.Name = "menuToolStripMenuItem";
+            menuToolStripMenuItem.Size = new Size(60, 24);
+            menuToolStripMenuItem.Text = "Menu";
             // 
             // helpToolStripMenuItem
             // 
             helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            helpToolStripMenuItem.Size = new Size(118, 24);
-            helpToolStripMenuItem.Text = "&Help";
+            helpToolStripMenuItem.Size = new Size(55, 24);
+            helpToolStripMenuItem.Text = "Help";
             // 
-            // broskiToolStripMenuItem
+            // fileToolStripMenuItem
             // 
-            broskiToolStripMenuItem.Name = "broskiToolStripMenuItem";
-            broskiToolStripMenuItem.Size = new Size(118, 24);
-            broskiToolStripMenuItem.Text = "&Broski";
+            fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            fileToolStripMenuItem.Size = new Size(46, 24);
+            fileToolStripMenuItem.Text = "File";
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(NameTextbox);
+            groupBox1.Controls.Add(LastNameTextbox);
+            groupBox1.Controls.Add(ZipLabel);
+            groupBox1.Controls.Add(StreetTextbox);
+            groupBox1.Controls.Add(StateLabel);
+            groupBox1.Controls.Add(CityTextbox);
+            groupBox1.Controls.Add(CityLabel);
+            groupBox1.Controls.Add(StateTextbox);
+            groupBox1.Controls.Add(StreetLabel);
+            groupBox1.Controls.Add(ZipTextbox);
+            groupBox1.Controls.Add(LastNameLabel);
+            groupBox1.Controls.Add(FirstNameLabel);
+            groupBox1.Location = new Point(12, 57);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(390, 298);
+            groupBox1.TabIndex = 17;
+            groupBox1.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(419, 36);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(244, 319);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 18;
+            pictureBox1.TabStop = false;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(801, 450);
+            Controls.Add(pictureBox1);
+            Controls.Add(groupBox1);
             Controls.Add(Label);
-            Controls.Add(ZipLabel);
-            Controls.Add(StateLabel);
-            Controls.Add(CityLabel);
-            Controls.Add(StreetLabel);
-            Controls.Add(LastNameLabel);
-            Controls.Add(FirstNameLabel);
-            Controls.Add(ZipTextbox);
-            Controls.Add(StateTextbox);
-            Controls.Add(CityTextbox);
-            Controls.Add(StreetTextbox);
-            Controls.Add(LastNameTextbox);
-            Controls.Add(NameTextbox);
             Controls.Add(ClearButton);
             Controls.Add(SubmitButton);
             Controls.Add(ExitButton);
-            Cursor = Cursors.No;
+            Controls.Add(menuStrip1);
+            Cursor = Cursors.Hand;
+            MainMenuStrip = menuStrip1;
             Name = "Form1";
             Text = "Form1";
-            TopMenuStrip.ResumeLayout(false);
+            Load += Form1_Load;
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -263,8 +304,12 @@
         private Label ZipLabel;
         private Label StateLabel;
         private Label Label;
-        private ContextMenuStrip TopMenuStrip;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem menuToolStripMenuItem;
         private ToolStripMenuItem helpToolStripMenuItem;
-        private ToolStripMenuItem broskiToolStripMenuItem;
+        private ToolStripMenuItem fileToolStripMenuItem;
+        private GroupBox groupBox1;
+        private ColorDialog colorDialog1;
+        private PictureBox pictureBox1;
     }
 }
