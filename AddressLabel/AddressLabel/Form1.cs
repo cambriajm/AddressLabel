@@ -1,4 +1,9 @@
 namespace AddressLabel
+//Cambria Morgan
+//RCET 2265
+//Spring 2026
+//Address Label
+//https://github.com/cambriajm/AddressLabel.git
 {
     public partial class Form1 : Form
     {
@@ -82,12 +87,12 @@ namespace AddressLabel
 
 
             {
-                Label.Text = NameTextbox.Text + LastNameTextbox.Text +
-                    StreetTextbox.Text + CityTextbox.Text
-                    + StateTextbox.Text + ZipTextbox.Text;
+                Label.Text = NameTextbox.Text + " " + LastNameTextbox.Text + "\n"+
+                    StreetTextbox.Text + " " + CityTextbox.Text
+                    + ", " + StateTextbox.Text + " " + ZipTextbox.Text;
 
-
-
+                
+               
 
                 SubmitButton.Enabled = true;
             }

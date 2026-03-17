@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             ExitButton = new Button();
             SubmitButton = new Button();
             ClearButton = new Button();
@@ -45,16 +44,8 @@
             ZipLabel = new Label();
             StateLabel = new Label();
             Label = new Label();
-            menuStrip1 = new MenuStrip();
-            menuToolStripMenuItem = new ToolStripMenuItem();
-            helpToolStripMenuItem = new ToolStripMenuItem();
-            fileToolStripMenuItem = new ToolStripMenuItem();
             groupBox1 = new GroupBox();
-            colorDialog1 = new ColorDialog();
-            pictureBox1 = new PictureBox();
-            menuStrip1.SuspendLayout();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // ExitButton
@@ -192,40 +183,12 @@
             // Label
             // 
             Label.Cursor = Cursors.Hand;
-            Label.Font = new Font("Old English Text MT", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Label.Font = new Font("Courier New", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Label.Location = new Point(397, 32);
             Label.Name = "Label";
             Label.Size = new Size(391, 310);
             Label.TabIndex = 15;
             Label.Click += Label_Click;
-            // 
-            // menuStrip1
-            // 
-            menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { menuToolStripMenuItem, helpToolStripMenuItem, fileToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(801, 28);
-            menuStrip1.TabIndex = 16;
-            menuStrip1.Text = "menuStrip1";
-            // 
-            // menuToolStripMenuItem
-            // 
-            menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            menuToolStripMenuItem.Size = new Size(60, 24);
-            menuToolStripMenuItem.Text = "Menu";
-            // 
-            // helpToolStripMenuItem
-            // 
-            helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            helpToolStripMenuItem.Size = new Size(55, 24);
-            helpToolStripMenuItem.Text = "Help";
-            // 
-            // fileToolStripMenuItem
-            // 
-            fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            fileToolStripMenuItem.Size = new Size(46, 24);
-            fileToolStripMenuItem.Text = "File";
             // 
             // groupBox1
             // 
@@ -247,41 +210,23 @@
             groupBox1.TabIndex = 17;
             groupBox1.TabStop = false;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(419, 36);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(244, 319);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 18;
-            pictureBox1.TabStop = false;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(801, 450);
-            Controls.Add(pictureBox1);
             Controls.Add(groupBox1);
             Controls.Add(Label);
             Controls.Add(ClearButton);
             Controls.Add(SubmitButton);
             Controls.Add(ExitButton);
-            Controls.Add(menuStrip1);
             Cursor = Cursors.Hand;
-            MainMenuStrip = menuStrip1;
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
 
@@ -304,12 +249,6 @@
         private Label ZipLabel;
         private Label StateLabel;
         private Label Label;
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem menuToolStripMenuItem;
-        private ToolStripMenuItem helpToolStripMenuItem;
-        private ToolStripMenuItem fileToolStripMenuItem;
         private GroupBox groupBox1;
-        private ColorDialog colorDialog1;
-        private PictureBox pictureBox1;
     }
 }
